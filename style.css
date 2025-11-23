@@ -1,0 +1,122 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+/* ... (Selectors buits per a index.html) ... */
+ 
+/* ---- 1. HEADER I NAVEGACIÓ ---- (header: logo y nav-menu) */
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 5px;
+
+} 
+
+.logo h2 {
+    color: rgb(52, 52, 117);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px; /* aqui es donde se da espacio entre Inicio Galeria Contacto */
+    margin: 10px;
+    padding: 10px;
+}
+ 
+/* ---- 2. SECCIÓ HERO ---- (main: 3 sections) */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px; 
+
+}
+  
+/* ---- 3. SECCIÓ LLOCS (TARGETES) ---- */
+.seccio-llocs h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black; /*crea un borde en el titulo de secció-llocs: Llocs d'interes*/
+}
+
+.graella-llocs {
+    display: grid;
+    grid-template-columns: auto auto; /*aqui se crean dos columnas automaticas (que ocupan un espacio predeterminado 1fr 1fr)*/
+    grid-template-rows: auto; /*aqui solo se crea una fila */
+    gap: 20px; 
+    text-align: center;
+    background-color: rgba(84, 84, 158, 0.744);
+    border: 1px solid black;
+}
+
+.graella-llocs article h3 { /*esto SOLO selecciona los titulos (article: h3) de graella-llocs*/
+    margin-bottom: auto; /*aqui se crea un espacio entre la parte inferior del titulo y texto*/
+}
+
+.graella-llocs article:nth-child(3) { /* aqui SOLO selecciona el tercer articulo de graella-llocs*/
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/3; /*aqui le dices que el elemento empieze desde la primera columna y acabe antes de la tercera*/
+}
+ 
+/* ---- 4. SECCIÓ BARRIS ---- */
+.seccio-barris h2 { /*titulo de */
+    text-align: center;
+
+}
+
+.barris-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.barris-container h3 {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    justify-content: center;
+}
+
+/* ---- 5. FOOTER ---- (footer) */
+.footer-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ... */
+ 
+/* ---- 6. MEDIA QUERIES (RESPONSIVE INDEX) ---- */
+@media (max-width: 768px) {
+    /* TODO: Tauleta (Graella 2 col, Barris 1 col) */
+}
+@media (max-width: 480px) {
+    /* TODO: Mòbil (Header apilat, Graella 1 col) */
+}
+ 
+/* ---- 7. NOVES REGLES PER A GALERIA.HTML ---- */
+/*
+    TODO: L'ALUMNE HA D'AFEGIR AQUÍ ELS SEUS NOUS SELECTORS
+    Ex: .galeria-grid, .galeria-item, etc.
+*/
+ 
+ 
+/* ---- 8. NOVES REGLES PER A CONTACTE.HTML ---- */
+/*
+    TODO: L'ALUMNE HA D'AFEGIR AQUÍ ELS SEUS NOUS SELECTORS
+    Ex: .formulari-contacte, .formulari-contacte input, etc.
+*/
+ 
+/* ---- 9. MEDIA QUERIES PER A NOVES PÀGINES ---- */
+/*
+    TODO: Afegir aquí el responsive per a la galeria i el formulari.
+*/
