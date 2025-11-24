@@ -1,104 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color:hsl(0, 0%, 100%);
 }
-/* ... (Selectors buits per a index.html) ... */
  
 /* ---- 1. HEADER I NAVEGACIÓ ---- (header: logo y nav-menu) */
 .header-principal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin: 5px;
+    padding: 20px 40px; /*espacio interior 20 pixeles arriba y abajo, y 40 pixeles en la izquierda y derecha*/
 
+    color: hsl(207, 84%, 12%); 
+    text-decoration: none; /* se quita el subrayado de inicio galeria contacto*/
+    font-weight: 500; 
+    transition: color 0.3s; 
+
+    position: absolute; /* ?? */
+    top: 0;
+    left: 0;
+    width: 100%; /* ocupa todo el ancho */
+    z-index: 1000; /* asegura que el texto este por encima de la imagen!!!*/
+    background-color: transparent; /* fondo transparente, así se ve la imagen compelta tmb en la cabezera*/
 } 
-
-.logo h2 {
-    color: rgb(52, 52, 117);
-}
 
 .nav-menu ul {
     display: flex;
-    list-style-type: none;
-    gap: 20px; /* aqui es donde se da espacio entre Inicio Galeria Contacto */
+    list-style-type: none; /*esto elimina el marcador de la lista desordenada ul*/
+    gap: 30px; /* aqui es donde se da espacio de texto entre Inicio Galeria Contacto */
     margin: 10px;
     padding: 10px;
 }
+
+.nav-menu a { /*selecciona ESPECIFICAMENTE Inicio Galeria y Contacto */
+    text-decoration: none; /*quita el subrallado*/
+    color:hsl(207, 84%, 12%);
+}
  
-/* ---- 2. SECCIÓ HERO ---- (main: 3 sections) */
+/* ---- 2. SECCIÓ HERO ---- (MAIN: 1r section) */
 .hero-section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 10px; 
 
+    background-image: url('https://www.way-away.es/media/img/way-away11385.jpg'); 
+    background-size: cover; /* asegura que la foto cubra todo el espacio */
+    background-position: center; /*centra la foto*/
+    height: 400px; /* se da altura para que se vea la foto */
+    margin: 0; /* hace que la foto ocupe TODO el espacio, sin dejar nada de bordes*/
+
+    /* -- Estilo para el título 'Descobreix Barcelona' -- */
+    font-size: 1.5em; /* se aumenta el tamaño de letra */
+    font-weight: 100; /* una letra mas fina */
+    letter-spacing: 5px; /* efecto espaciado entre letras */
+    margin-bottom: 5px; /* reduce el espacio respecto el titulo con el texto de abajo */
+    
+    color: hsl(0, 0%, 100%); /*titulo en blanco*/
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* y sombra negra por detrás para que destaque */
 }
-  
-/* ---- 3. SECCIÓ LLOCS (TARGETES) ---- */
-.seccio-llocs h2 {
+/* ---- 3. SECCIÓ LLOCS (TARGETES: 2r section) ---- */
+.seccio-llocs h2 { /*solo selecciona el titulo 'Llocs d'Interès' */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black; /*crea un borde en el titulo de secció-llocs: Llocs d'interes*/
+    justify-content: center;/*centra el titulo*/
+    margin-top: 50px; /*crea más espacio arriba del titulo, para separarlo del header*/
 }
 
 .graella-llocs {
     display: grid;
-    grid-template-columns: auto auto; /*aqui se crean dos columnas automaticas (que ocupan un espacio predeterminado 1fr 1fr)*/
+    grid-template-columns: 1fr 1fr; /*aqui se crean dos columnas automaticas (que ocupan un espacio predeterminado 1fr 1fr)*/
     grid-template-rows: auto; /*aqui solo se crea una fila */
-    gap: 20px; 
+    margin: 0 auto;
     text-align: center;
-    background-color: rgba(84, 84, 158, 0.744);
-    border: 1px solid black;
+    background-color: hsl(0, 0%, 100%);
 }
 
-.graella-llocs article h3 { /*esto SOLO selecciona los titulos (article: h3) de graella-llocs*/
-    margin-bottom: auto; /*aqui se crea un espacio entre la parte inferior del titulo y texto*/
+.graella-llocs h3 { /*SOLO contiene los TITULOS Sagrada Familia, Parc Güell y Camp Nou */
+    display: grid;
+    grid-template-columns: auto auto; /*se crean dos columnas*/
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto; 
+
+}
+
+
+.graella-llocs article img { /*aquí solo se seleccionan las imagenes dentro de graella-llocs*/
+    
+    width: 80%; /* ocupa todo el ancho de la tarjeta */
+    height: 180px; /* altura fija para que todas las fotos sean uniformes */
+    object-fit: contain; /* recorta la imagen para que cubra el área sin deformarse */
+    margin: 20px auto; /* espacio entre la foto y el título */
+    /* el 20px es para margen superior e inferior, auto para izquierdo y derecho */
+    border-radius:8px;
+} 
+
+.graella-llocs article { /*aquí se selecciona SOLO el box/tarjeta (3 en total)*/
+    border-radius: 8px; /*hacemos que las tarjetas tengan un borde redondo*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*aqui se crea una pequeña sombra al box/tarjeta*/
+    transition: transform 0.3s;
+    margin: 20px; /*se crea un espacio en general respecto al resto de tarjetas*/
+    background-color: hsla(208, 35%, 81%, 0.671); /*colo r al box/tarjetas*/
+    
 }
 
 .graella-llocs article:nth-child(3) { /* aqui SOLO selecciona el tercer articulo de graella-llocs*/
+    grid-column: 1/3; /*aquí hacemos que la tarjeta empieze en la primera columna y acabe antes de la tercera*/
+} 
+
+
+/* ---- 4. SECCIÓ BARRIS (TARGETES: 3r section) ---- */
+.seccio-barris h2 { /*SOLO incluye el titulo "Explora els Barris" */
+    margin-top: 50px;
+    text-align: center;
+}
+
+.seccio-barris p { /*aquí SOLO se selecciona las descripciones/texto*/
+    padding: 0 30px; /*esto crea espacio vertical y horizontal del texto respecto al resto*/
+} 
+
+.barris-container { /*contiene TODO lo de Gracia y El Born*/
     display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-column: 1/3; /*aqui le dices que el elemento empieze desde la primera columna y acabe antes de la tercera*/
-}
- 
-/* ---- 4. SECCIÓ BARRIS ---- */
-.seccio-barris h2 { /*titulo de */
-    text-align: center;
-
+    grid-template-columns: 1fr 1fr; /*se crean dos columnas de igual tamaño*/
+    text-align: center; /*se centra el texto*/
+    gap: 30px;
+    margin-bottom: 100px; /*da espacio entre toda la sección respecto al pie de página (para que no este tan pegado al final)*/
+    background-color: hsl(0, 0%, 100%);
+    
 }
 
-.barris-container {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 20px;
-}
-
-.barris-container h3 {
+.barris-container h3 { /*SOLO contiene los TITULOS Gracia y El Born */
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto; /*se crean dos columnas*/
     text-align: center;
     justify-content: center;
+    margin: 0 auto; 
 }
 
-/* ---- 5. FOOTER ---- (footer) */
+.descripcio-barri img { /*selecciona ESPECÍFICAMENTE las dos imagenes*/
+    width: 80%; /* Ocupa todo el ancho de la tarjeta */
+    height: 180px; /* Altura fija para que todas las fotos sean uniformes */
+    object-fit: contain; /* Recorta la imagen para que cubra el área sin deformarse */
+    margin: 20px 0;
+    border-radius:8px;
+}
+
+.descripcio-barri { /*aqui se selecciona solo el box/tarjeta*/
+    border-radius:8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*aqui se crea una pequeña sombra al box*/
+    transition: transform 0.3s;
+    margin: 20px;
+    background-color: hsla(208, 35%, 81%, 0.671);
+}
+
+
+/* ---- 5. FOOTER ---- (fin/pie de página) */
 .footer-principal {
+    background-color: hsla(208, 51%, 70%, 0.671);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* ... */
+
  
 /* ---- 6. MEDIA QUERIES (RESPONSIVE INDEX) ---- */
 @media (max-width: 768px) {
     /* TODO: Tauleta (Graella 2 col, Barris 1 col) */
+    
 }
+
 @media (max-width: 480px) {
     /* TODO: Mòbil (Header apilat, Graella 1 col) */
 }
