@@ -169,13 +169,82 @@ body {
 
  
 /* ---- 6. MEDIA QUERIES (RESPONSIVE INDEX) ---- */
+
+/* --- MEDIA QUERIES: TABLET --- */
+
 @media (max-width: 768px) {
-    /* TODO: Tauleta (Graella 2 col, Barris 1 col) */
+
+    .header-principal {
+        /* Se reduce el relleno para no ocupar tanto espacio vertical */
+        padding: 15px 20px; 
+    }
     
+    .hero-section {
+        /* se reduce el tamaño del titulo y el mini texto para que no sea demasiado grande */
+        font-size: 1.3em;
+    }
+    
+    .graella-llocs {
+        /* se añaden márgenes para que el box/tarjeta  no toque los bordes */
+        margin: 0 15px; 
+    }
+    
+    .graella-llocs article:nth-child(3) {
+        /* se mantiene el tercer artículo ocupando las dos columnas. */
+        grid-column: 1 / 3; 
+    }
+    
+    .barris-container {
+        grid-template-columns: 1fr; /*se cambia de dos columnas a una*/
+        gap: 20px;
+        margin: 0 50px 80px 50px; /* Centra los artículos y da espacio */
+    }
+
+    /* ajuste de imágenes en las tarjetas */
+    .graella-llocs article img,
+    .descripcio-barri img {
+        width: 90%; 
+    }
 }
 
+/* --- MEDIA QUERIES: MÓVIL --- */
+
 @media (max-width: 480px) {
-    /* TODO: Mòbil (Header apilat, Graella 1 col) */
+    
+    .header-principal {
+        flex-direction: column; /* cambia de horizontal a apilado vertical (así no se solapan sobre si) */
+        align-items: flex-start; /* alinea los elementos empezando desde la izquierda */
+        padding: 10px 20px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .hero-section {
+        font-size: 1.2em; /* se ajusta el tamaño de letra para el móvil y no sea tan grande */
+        height: 300px; /* se reduce la altura para que no ocupe tanto espacio vertical */
+    }
+
+    .graella-llocs {
+        grid-template-columns: 1fr;
+        margin: 0 10px;
+    }
+
+    .graella-llocs article:nth-child(3) {
+        grid-column: 1 / 2; /* si solo hay una columna, la tercera tarjeta ya ocupa toda la linea por defecto*/
+    }
+
+    .barris-container {
+        grid-template-columns: 1fr; /*pasamos de dos columnas a una*/
+        margin: 0 10px; 
+        gap: 15px;
+    }
+
+    .footer-principal {
+        width: 100%; /*para que ocupe todo el espacio que pueda en el pie de página*/
+    }
+
 }
  
 /* ---- 7. NOVES REGLES PER A GALERIA.HTML ---- */
