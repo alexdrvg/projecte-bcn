@@ -166,7 +166,13 @@ body {
         margin: 30px 20px;
         padding: 20px;
         max-width: 90%;
+        
     }
+
+    .footer-principal {
+        margin-top: 50px;
+    }
+
 }
 
 /* --- MEDIA QUERIES: MÓVIL (max-width: 480px) --- */
