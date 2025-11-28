@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecte BCN Responsive - Contacte</title> 
+    <link rel="stylesheet" href="style_contacto.css"> 
+</head>
+<body> 
+    <header class="header-principal">
+        <div class="logo">
+            <h2>BCN</h2>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero-contacte" class="hero-section">
+            <h1>Contacta amb Nosaltres</h1>
+            <p>Deixa'ns un missatge i et respondrem aviat</p>
+        </section>
+
+        <section id="formulari" class="seccio-formulari">
+            <h2>Formulari de contacte</h2>
+            
+            <form action="#" method="POST" class="contacte-form"> 
+            <!--inicio de un formulario web y especifica cómo se deben manejar los datos cuando el usuario haga clic a enviar-->
+                <div class="formulari-seccio">
+                    <label for="nom">Nom Complet:</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                
+                <div class="formulari-seccio">
+                    <label for="email">Correu Electrònic:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="formulari-seccio">
+                    <label for="assumpte">Assumpte (opcional):</label>
+                    <input type="text" id="assumpte" name="assumpte">
+                </div>
+                
+                <div class="formulari-seccio">
+                    <label for="missatge">Missatge:</label>
+                    <textarea id="missatge" name="missatge" rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" class="boto-enviar">Enviar Missatge</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <p>Projecte M04 - Disseny d'Aplicacions Multiplataforma © 2025 </p>
+    </footer>
+</body>
+</html>

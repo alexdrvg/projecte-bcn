@@ -159,14 +159,13 @@ body {
     margin-top: 20px;
 }
 
-/* ---- 6. MEDIA QUERIES (RESPONSIVE INDEX) ---- */
 
 /* --- MEDIA QUERIES: TABLET --- */
 
 @media (max-width: 768px) {
 
     .header-principal {
-        /* Se reduce el relleno para no ocupar tanto espacio vertical */
+        /* se reduce el relleno para no ocupar tanto espacio vertical */
         padding: 15px 20px;
     }
 
@@ -198,6 +197,7 @@ body {
 }
 
 /* --- MEDIA QUERIES: MÓVIL --- */
+
 @media (max-width: 480px) {
 
     .header-principal {

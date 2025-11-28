@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:hsl(0, 0%, 100%);
+}
+
+/* ---- 1. HEADER I NAVEGACIÓ ---- */
+
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; 
+
+    color: hsl(207, 84%, 12%); 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: color 0.3s; 
+
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000; 
+} 
+
+.nav-menu ul {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.nav-menu a { 
+    text-decoration: none;
+    color:hsl(207, 84%, 12%);
+}
+
+/* ---- 2. SECCIÓ HERO (específico para contacto solo) ---- */
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: hsla(208, 51%, 70%, 0.671);
+    background-position: center; 
+    height: 400px; 
+    margin: 0; 
+
+    /* -- Estilo para el título 'Contacta amb Nosaltres' -- */
+    font-size: 1.5em; 
+    font-weight: 100; 
+    letter-spacing: 5px; 
+    margin-bottom: 5px; 
+    
+    color: hsl(207, 84%, 12%); /* texto oscuro sobre fondo claro */
+    text-shadow: 2px 2px 5px white; /*sombra blanca la texto negro así descata más*/
+}
+
+
+/* ---- 3. SECCIÓ FORMULARI ---- */
+
+.seccio-formulari h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.seccio-formulari { /*contiene toda la tarjetita de formulario*/
+    max-width: 700px;
+    margin: 50px auto 100px auto;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 10px; /*se redondea la tarjeta*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contacte-form { /*se ordena todo lo escrito en columna*/
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
+.formulari-seccio {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulari-seccio label { /*selecciona la etiqueta descriptiva de cada parte del formulario como nombre, corroe etc*/
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.formulari-seccio input,
+.formulari-seccio textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+.formulari-seccio input:focus,
+.formulari-seccio textarea:focus {
+    border-color: hsl(207, 84%, 40%);
+    outline: none;
+}
+
+.formulari-seccio textarea {
+    resize: vertical;
+}
+
+.boto-enviar {
+    background-color: hsl(207, 84%, 12%);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.boto-enviar:hover {
+    background-color: hsl(207, 84%, 25%);
+}
+
+
+/* ---- 4. FOOTER ---- (fin/pie de página) */
+
+.footer-principal {
+    background-color: hsla(208, 51%, 70%, 0.671);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* --- MEDIA QUERIES: TABLET (max-width: 768px) --- */
+
+@media (max-width: 768px) {
+
+    .header-principal {
+        padding: 15px 20px; 
+    }
+    
+    .hero-section {
+        font-size: 1.3em;
+        padding: 0 20px;
+        margin: 0 auto; 
+    }
+    
+    .seccio-formulari {
+        margin: 30px 20px;
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+
+/* --- MEDIA QUERIES: MÓVIL (max-width: 480px) --- */
+
+@media (max-width: 480px) {
+    
+    .header-principal { 
+        padding: 10px 20px;
+    }
+
+    .hero-section {
+        font-size: 1.2em; 
+        height: 300px; 
+        padding: 20px;
+        padding-top: 60px;
+    }
+
+    .seccio-formulari {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .boto-enviar {
+        padding: 12px;
+        font-size: 1em;
+    }
+    
+    .footer-principal {
+        width: 100%;
+    }
+
+    .footer-principal p {
+        text-align: center;
+        margin: 10px; 
+    }
+}
