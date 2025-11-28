@@ -65,9 +65,9 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* y sombra negra por detrás para que destaque */
 }
 /* ---- 3. SECCIÓ LLOCS (TARGETES: 2r section) ---- */
+
 .seccio-llocs h2 { /*solo selecciona el titulo 'Llocs d'Interès' */
-    display: flex;
-    justify-content: center;/*centra el titulo*/
+    text-align: center;
     margin-top: 50px; /*crea más espacio arriba del titulo, para separarlo del header*/
 }
 
@@ -88,7 +88,6 @@ body {
     margin: 0 auto; 
 
 }
-
 
 .graella-llocs article img { /*aquí solo se seleccionan las imagenes dentro de graella-llocs*/
     
@@ -182,6 +181,8 @@ body {
     .hero-section {
         /* se reduce el tamaño del titulo y el mini texto para que no sea demasiado grande */
         font-size: 1.3em;
+        padding: 0 20px;
+        margin: 0 auto; 
     }
     
     .graella-llocs {
@@ -211,33 +212,32 @@ body {
 
 @media (max-width: 480px) {
     
-    .header-principal {
-        flex-direction: column; /* cambia de horizontal a apilado vertical (así no se solapan sobre si) */
-        align-items: flex-start; /* alinea los elementos empezando desde la izquierda */
+    .header-principal { 
         padding: 10px 20px;
-    }
-
-    .nav-menu {
-        flex-direction: column;
     }
 
     .hero-section {
         font-size: 1.2em; /* se ajusta el tamaño de letra para el móvil y no sea tan grande */
         height: 300px; /* se reduce la altura para que no ocupe tanto espacio vertical */
+        padding: 20px;
+        padding-top: 60px;
     }
 
     .graella-llocs {
         grid-template-columns: 1fr;
-        margin: 0 10px;
+        gap: 15px;
+        margin: 0;
+
     }
 
     .graella-llocs article:nth-child(3) {
         grid-column: 1 / 2; /* si solo hay una columna, la tercera tarjeta ya ocupa toda la linea por defecto*/
+        padding: 10px;
     }
 
     .barris-container {
         grid-template-columns: 1fr; /*pasamos de dos columnas a una*/
-        margin: 0 10px; 
+        margin: 0; 
         gap: 15px;
     }
 
@@ -245,22 +245,15 @@ body {
         width: 100%; /*para que ocupe todo el espacio que pueda en el pie de página*/
     }
 
+    .footer-principal p { /*se crea este aparato para alinar el texto y crear margen sin que se descuadre la página*/
+        text-align: center;
+        margin: 10px; 
+    }
+
 }
- 
-/* ---- 7. NOVES REGLES PER A GALERIA.HTML ---- */
-/*
-    TODO: L'ALUMNE HA D'AFEGIR AQUÍ ELS SEUS NOUS SELECTORS
-    Ex: .galeria-grid, .galeria-item, etc.
-*/
- 
  
 /* ---- 8. NOVES REGLES PER A CONTACTE.HTML ---- */
 /*
     TODO: L'ALUMNE HA D'AFEGIR AQUÍ ELS SEUS NOUS SELECTORS
     Ex: .formulari-contacte, .formulari-contacte input, etc.
-*/
- 
-/* ---- 9. MEDIA QUERIES PER A NOVES PÀGINES ---- */
-/*
-    TODO: Afegir aquí el responsive per a la galeria i el formulari.
 */
